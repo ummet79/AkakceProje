@@ -1,58 +1,42 @@
 package _04_UserStory;
+
+import Utlity.BaseDriver;
+import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class _04_negative {
-    public static void main(String[] args) {
-        WebDriverManager.chromedriver().setup();
+import static org.junit.Assert.assertTrue;
 
+public class _04_negative extends BaseDriver {
+    @Test
+    public void Test2(){
+        driver.get("https://www.akakce.com");
+        WebElement loginButton = driver.findElement(By.xpath("//a[text()='Giriş Yap']")); // XPath doğru olmalı
+        loginButton.click();
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        // 3. Kullanıcı geçersiz e-posta ve geçerli şifre girer.
+        WebElement emailField = driver.findElement(By.id("email")); // E-posta alanının ID'sini doğru olarak ayarlayın
+        WebElement passwordField = driver.findElement(By.id("password")); // Şifre alanının ID'sini doğru olarak ayarlayın
+        WebElement submitButton = driver.findElement(By.id("login-submit-button")); // Giriş butonunun ID'sini doğru olarak ayarlayın
 
+        // Geçersiz e-posta ve geçerli şifre ile giriş yapmayı dener
+        emailField.sendKeys("invalid@example.com");
+        passwordField.sendKeys("validPassword"); // Şifreyi uygun şekilde değiştirin
+        submitButton.click();
 
-        WebDriver driver = new ChromeDriver(options);
+        // 4. Giriş işleminin başarısız olduğunu kontrol etme
+        WebElement errorMessage = driver.findElement(By.id("error-message")); // Hata mesajının ID'sini doğru olarak ayarlayın
+        assertTrue("Giriş işlemi başarısız oldu, uygun hata mesajı gösterilmedi.",
+                errorMessage.isDisplayed() && errorMessage.getText().contains("Geçersiz e-posta veya şifre")); // Mesaj metnini uygun şekilde değiştirin
+    }
 
-        try {
-            // Open the website
-            driver.get("https://www.akakce.com");
-
-
-            WebDriverWait wait = new WebDriverWait(driver, 10);
-            WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='login-button']")));
-            loginButton.click();
-
-
-            WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email")));
-            WebElement passwordField = driver.findElement(By.name("password"));
-
-
-
-
-            WebElement submitButton = driver.findElement(By.xpath("//button[@id='submit-button']"));
-            submitButton.click();
-
-            WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='error-message']"))); // Adjust XPath as needed
-
-
-            if (errorMessage.isDisplayed()) {
-                System.out.println("Test Passed: Error message is displayed.");
-            } else {
-                System.out.println("Test Failed: Error message is not displayed.");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            // Close the browser
+    @Test
+    public void tearDown() {
+        // Testten sonra tarayıcıyı kapatma
+        if (driver != null) {
             driver.quit();
         }
     }
-    }
+}
+
 
