@@ -43,7 +43,7 @@ public class _01_Negative extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement passwordAgain = driver.findElement(By.cssSelector("[onfocusout='ControlPassword();']"));
-        passwordAgain.sendKeys("Passw3");
+        passwordAgain.sendKeys("Passw3fasfsa");
         MyFunc.Bekle(2);
 
         WebElement delete_MyAccount = driver.findElement(By.cssSelector("[style='text-align:center;margin-left:0px !important']"));
