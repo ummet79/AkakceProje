@@ -49,7 +49,7 @@ public class _01_Negative extends BaseDriver {
         WebElement delete_MyAccount = driver.findElement(By.cssSelector("[style='text-align:center;margin-left:0px !important']"));
         delete_MyAccount.click();
 
-        Assert.assertTrue("Yanlış şifre ", passwordAgain.equals("Password123"));
+        Assert.assertTrue("yanlış şifre ", passwordAgain.equals("Password123"));
 
         BekleKapat();
     }
