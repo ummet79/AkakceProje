@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Account_Deletion extends BaseDriver {
+public class _02_Positive extends BaseDriver {
 
     @Test
     public void Test1() {
