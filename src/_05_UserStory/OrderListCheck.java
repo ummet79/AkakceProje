@@ -17,7 +17,7 @@ public class OrderListCheck extends BaseDriver {
         MyFunc.Bekle(2);
 
         WebElement eMail = driver.findElement(By.xpath("//span[@class='frm_v8'] / input[@name='life']"));
-        eMail.sendKeys("lafewo8415@rogtat.com");
+        eMail.sendKeys("TechnoStudy06@gmail.com");
         MyFunc.Bekle(2);
 
         WebElement password = driver.findElement(By.xpath("//input[@class='t' and @name='lifp']"));
