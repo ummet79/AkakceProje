@@ -19,12 +19,8 @@ public class _01_Negative extends BaseDriver {
 
 
         WebElement isim = driver.findElement(By.xpath("(//*[@maxlength='20'])[1]"));
-        isim.sendKeys("Techno");
+        isim.sendKeys("");
 
-
-        WebElement soyisim = driver.findElement(By.xpath("(//*[@maxlength='20'])[2]"));
-        soyisim.sendKeys("");
-        MyFunc.Bekle(3);
 
         WebElement email = driver.findElement(By.xpath("(//*[@type='email'])[3]"));
         email.sendKeys("TechnoStudy06@gmail.com");
@@ -46,21 +42,6 @@ public class _01_Negative extends BaseDriver {
         kadın.click();
         MyFunc.Bekle(3);
 
-        WebElement gün = driver.findElement(By.xpath("(//select[@class='t'])[1]"));
-        Select GunSecimi = new Select(gün);
-        GunSecimi.selectByValue("1");
-        MyFunc.Bekle(3);
-
-
-        WebElement ay = driver.findElement(By.xpath("(//select[@class='t'])[2]"));
-        Select AySecimi = new Select(ay);
-        AySecimi.selectByValue("1");
-        MyFunc.Bekle(3);
-
-        WebElement yıl = driver.findElement(By.xpath("(//select[@class='t'])[3]"));
-        Select YılSecimi = new Select(yıl);
-        YılSecimi.selectByValue("1990");
-        MyFunc.Bekle(3);
 
         WebElement KullanımSözleşmesi = driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
         KullanımSözleşmesi.click();
@@ -70,7 +51,7 @@ public class _01_Negative extends BaseDriver {
         HesapAç.click();
         MyFunc.Bekle(3);
 
-        Assert.assertTrue("Lütfen soyadınızı yazın",soyisim.equals("Study"));
+        Assert.assertTrue("Lütfen adınız yazın",isim.equals("Techno"));
 
         BekleKapat();
     }
