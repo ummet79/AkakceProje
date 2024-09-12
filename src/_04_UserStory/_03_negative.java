@@ -1,13 +1,14 @@
 package _04_UserStory;
 
-import org.junit.Test;
 import Utlity.BaseDriver;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import static org.junit.Assert.assertTrue;
 
-public class _03_negative extends BaseDriver {
+
+    public class _03_negative extends BaseDriver {
 
         @Test
         public void Test1(){
@@ -36,3 +37,5 @@ public class _03_negative extends BaseDriver {
             }
         }
     }
+
+
