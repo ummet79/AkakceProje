@@ -14,10 +14,11 @@ public class _02_Positive extends BaseDriver {
 
         WebElement hesapAc = driver.findElement(By.xpath("(//*[text()='Hesap Aç'])[1]"));
         hesapAc.click();
-
+        MyFunc.Bekle(2);
 
         WebElement isim = driver.findElement(By.xpath("(//*[@maxlength='20'])[1]"));
         isim.sendKeys("Techno");
+        MyFunc.Bekle(3);
 
 
         WebElement soyisim = driver.findElement(By.xpath("(//*[@maxlength='20'])[2]"));
