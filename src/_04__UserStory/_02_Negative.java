@@ -19,11 +19,11 @@ public class _02_Negative extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement Email=driver.findElement(By.xpath("//input[@id='life']"));
-        Email.sendKeys("dinotox01@esterace.com");
+        Email.sendKeys("TechnoStudy06@gmail.com");
         MyFunc.Bekle(1);
 
         WebElement password=driver.findElement(By.xpath("//input[@id='lifp']"));
-        password.sendKeys("1234");
+        password.sendKeys("Password456");  // yanlış şifre girişi
         MyFunc.Bekle(1);
 
         WebElement GirişYap=driver.findElement(By.xpath("//input[@id='lfb']"));

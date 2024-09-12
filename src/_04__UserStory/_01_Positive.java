@@ -19,11 +19,11 @@ public class _01_Positive extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement Email=driver.findElement(By.xpath("//input[@id='life']"));
-        Email.sendKeys("dinotox898@esterace.com");
+        Email.sendKeys("TechnoStudy06@gmail.com");
         MyFunc.Bekle(1);
 
         WebElement password=driver.findElement(By.xpath("//input[@id='lifp']"));
-        password.sendKeys("Test123*");
+        password.sendKeys("Password123");
         MyFunc.Bekle(1);
 
         WebElement GirişYap=driver.findElement(By.xpath("//input[@id='lfb']"));
